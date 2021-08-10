@@ -6,39 +6,39 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @Description: Ãô¸Ğ´Ê¹ıÂË
- * @Project£ºtest
+ * @Description: æ•æ„Ÿè¯è¿‡æ»¤
+ * @Projectï¼štest
  * @Author : chenming
- * @Date £º 2014Äê4ÔÂ20ÈÕ ÏÂÎç4:17:15
+ * @Date ï¼š 2014å¹´4æœˆ20æ—¥ ä¸‹åˆ4:17:15
  * @version 1.0
  */
 public class SensitivewordFilter {
 	@SuppressWarnings("rawtypes")
 	private Map sensitiveWordMap = null;
-	public static int minMatchTYpe = 1;      //×îĞ¡Æ¥Åä¹æÔò
-	public static int maxMatchType = 2;      //×î´óÆ¥Åä¹æÔò
+	public static int minMatchTYpe = 1;      //æœ€å°åŒ¹é…è§„åˆ™
+	public static int maxMatchType = 2;      //æœ€å¤§åŒ¹é…è§„åˆ™
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬³õÊ¼»¯Ãô¸Ğ´Ê¿â
+	 * æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–æ•æ„Ÿè¯åº“
 	 */
 	public SensitivewordFilter(){
 		sensitiveWordMap = new SensitiveWordInit().initKeyWord();
 	}
 	
 	/**
-	 * ÅĞ¶ÏÎÄ×ÖÊÇ·ñ°üº¬Ãô¸Ğ×Ö·û
+	 * åˆ¤æ–­æ–‡å­—æ˜¯å¦åŒ…å«æ•æ„Ÿå­—ç¬¦
 	 * @author chenming 
-	 * @date 2014Äê4ÔÂ20ÈÕ ÏÂÎç4:28:30
-	 * @param txt  ÎÄ×Ö
-	 * @param matchType  Æ¥Åä¹æÔò&nbsp;1£º×îĞ¡Æ¥Åä¹æÔò£¬2£º×î´óÆ¥Åä¹æÔò
-	 * @return Èô°üº¬·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * @date 2014å¹´4æœˆ20æ—¥ ä¸‹åˆ4:28:30
+	 * @param txt  æ–‡å­—
+	 * @param matchType  åŒ¹é…è§„åˆ™&nbsp;1ï¼šæœ€å°åŒ¹é…è§„åˆ™ï¼Œ2ï¼šæœ€å¤§åŒ¹é…è§„åˆ™
+	 * @return è‹¥åŒ…å«è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 * @version 1.0
 	 */
 	public boolean isContaintSensitiveWord(String txt,int matchType){
 		boolean flag = false;
 		for(int i = 0 ; i < txt.length() ; i++){
-			int matchFlag = this.CheckSensitiveWord(txt, i, matchType); //ÅĞ¶ÏÊÇ·ñ°üº¬Ãô¸Ğ×Ö·û
-			if(matchFlag > 0){    //´óÓÚ0´æÔÚ£¬·µ»Øtrue
+			int matchFlag = this.CheckSensitiveWord(txt, i, matchType); //åˆ¤æ–­æ˜¯å¦åŒ…å«æ•æ„Ÿå­—ç¬¦
+			if(matchFlag > 0){    //å¤§äº0å­˜åœ¨ï¼Œè¿”å›true
 				flag = true;
 			}
 		}
@@ -46,11 +46,11 @@ public class SensitivewordFilter {
 	}
 	
 	/**
-	 * »ñÈ¡ÎÄ×ÖÖĞµÄÃô¸Ğ´Ê
+	 * è·å–æ–‡å­—ä¸­çš„æ•æ„Ÿè¯
 	 * @author chenming 
-	 * @date 2014Äê4ÔÂ20ÈÕ ÏÂÎç5:10:52
-	 * @param txt ÎÄ×Ö
-	 * @param matchType Æ¥Åä¹æÔò&nbsp;1£º×îĞ¡Æ¥Åä¹æÔò£¬2£º×î´óÆ¥Åä¹æÔò
+	 * @date 2014å¹´4æœˆ20æ—¥ ä¸‹åˆ5:10:52
+	 * @param txt æ–‡å­—
+	 * @param matchType åŒ¹é…è§„åˆ™&nbsp;1ï¼šæœ€å°åŒ¹é…è§„åˆ™ï¼Œ2ï¼šæœ€å¤§åŒ¹é…è§„åˆ™
 	 * @return
 	 * @version 1.0
 	 */
@@ -58,10 +58,10 @@ public class SensitivewordFilter {
 		Set<String> sensitiveWordList = new HashSet<String>();
 		
 		for(int i = 0 ; i < txt.length() ; i++){
-			int length = CheckSensitiveWord(txt, i, matchType);    //ÅĞ¶ÏÊÇ·ñ°üº¬Ãô¸Ğ×Ö·û
-			if(length > 0){    //´æÔÚ,¼ÓÈëlistÖĞ
+			int length = CheckSensitiveWord(txt, i, matchType);    //åˆ¤æ–­æ˜¯å¦åŒ…å«æ•æ„Ÿå­—ç¬¦
+			if(length > 0){    //å­˜åœ¨,åŠ å…¥listä¸­
 				sensitiveWordList.add(txt.substring(i, i+length));
-				i = i + length - 1;    //¼õ1µÄÔ­Òò£¬ÊÇÒòÎªfor»á×ÔÔö
+				i = i + length - 1;    //å‡1çš„åŸå› ï¼Œæ˜¯å› ä¸ºforä¼šè‡ªå¢
 			}
 		}
 		
@@ -69,17 +69,17 @@ public class SensitivewordFilter {
 	}
 	
 	/**
-	 * Ìæ»»Ãô¸Ğ×Ö×Ö·û
+	 * æ›¿æ¢æ•æ„Ÿå­—å­—ç¬¦
 	 * @author chenming 
-	 * @date 2014Äê4ÔÂ20ÈÕ ÏÂÎç5:12:07
+	 * @date 2014å¹´4æœˆ20æ—¥ ä¸‹åˆ5:12:07
 	 * @param txt
 	 * @param matchType
-	 * @param replaceChar Ìæ»»×Ö·û£¬Ä¬ÈÏ*
+	 * @param replaceChar æ›¿æ¢å­—ç¬¦ï¼Œé»˜è®¤*
 	 * @version 1.0
 	 */
 	public String replaceSensitiveWord(String txt,int matchType,String replaceChar){
 		String resultTxt = txt;
-		Set<String> set = getSensitiveWord(txt, matchType);     //»ñÈ¡ËùÓĞµÄÃô¸Ğ´Ê
+		Set<String> set = getSensitiveWord(txt, matchType);     //è·å–æ‰€æœ‰çš„æ•æ„Ÿè¯
 		Iterator<String> iterator = set.iterator();
 		String word = null;
 		String replaceString = null;
@@ -93,9 +93,9 @@ public class SensitivewordFilter {
 	}
 	
 	/**
-	 * »ñÈ¡Ìæ»»×Ö·û´®
+	 * è·å–æ›¿æ¢å­—ç¬¦ä¸²
 	 * @author chenming 
-	 * @date 2014Äê4ÔÂ20ÈÕ ÏÂÎç5:21:19
+	 * @date 2014å¹´4æœˆ20æ—¥ ä¸‹åˆ5:21:19
 	 * @param replaceChar
 	 * @param length
 	 * @return
@@ -111,38 +111,38 @@ public class SensitivewordFilter {
 	}
 	
 	/**
-	 * ¼ì²éÎÄ×ÖÖĞÊÇ·ñ°üº¬Ãô¸Ğ×Ö·û£¬¼ì²é¹æÔòÈçÏÂ£º<br>
+	 * æ£€æŸ¥æ–‡å­—ä¸­æ˜¯å¦åŒ…å«æ•æ„Ÿå­—ç¬¦ï¼Œæ£€æŸ¥è§„åˆ™å¦‚ä¸‹ï¼š<br>
 	 * @author chenming 
-	 * @date 2014Äê4ÔÂ20ÈÕ ÏÂÎç4:31:03
+	 * @date 2014å¹´4æœˆ20æ—¥ ä¸‹åˆ4:31:03
 	 * @param txt
 	 * @param beginIndex
 	 * @param matchType
-	 * @return£¬Èç¹û´æÔÚ£¬Ôò·µ»ØÃô¸Ğ´Ê×Ö·ûµÄ³¤¶È£¬²»´æÔÚ·µ»Ø0
+	 * @returnï¼Œå¦‚æœå­˜åœ¨ï¼Œåˆ™è¿”å›æ•æ„Ÿè¯å­—ç¬¦çš„é•¿åº¦ï¼Œä¸å­˜åœ¨è¿”å›0
 	 * @version 1.0
 	 */
 	@SuppressWarnings({ "rawtypes"})
 	public int CheckSensitiveWord(String txt,int beginIndex,int matchType){
-		boolean  flag = false;    //Ãô¸Ğ´Ê½áÊø±êÊ¶Î»£ºÓÃÓÚÃô¸Ğ´ÊÖ»ÓĞ1Î»µÄÇé¿ö
-		int matchFlag = 0;     //Æ¥Åä±êÊ¶ÊıÄ¬ÈÏÎª0
+		boolean  flag = false;    //æ•æ„Ÿè¯ç»“æŸæ ‡è¯†ä½ï¼šç”¨äºæ•æ„Ÿè¯åªæœ‰1ä½çš„æƒ…å†µ
+		int matchFlag = 0;     //åŒ¹é…æ ‡è¯†æ•°é»˜è®¤ä¸º0
 		char word = 0;
 		Map nowMap = sensitiveWordMap;
 		for(int i = beginIndex; i < txt.length() ; i++){
 			word = txt.charAt(i);
-			nowMap = (Map) nowMap.get(word);     //»ñÈ¡Ö¸¶¨key
-			if(nowMap != null){     //´æÔÚ£¬ÔòÅĞ¶ÏÊÇ·ñÎª×îºóÒ»¸ö
-				matchFlag++;     //ÕÒµ½ÏàÓ¦key£¬Æ¥Åä±êÊ¶+1 
-				if("1".equals(nowMap.get("isEnd"))){       //Èç¹ûÎª×îºóÒ»¸öÆ¥Åä¹æÔò,½áÊøÑ­»·£¬·µ»ØÆ¥Åä±êÊ¶Êı
-					flag = true;       //½áÊø±êÖ¾Î»Îªtrue   
-					if(SensitivewordFilter.minMatchTYpe == matchType){    //×îĞ¡¹æÔò£¬Ö±½Ó·µ»Ø,×î´ó¹æÔò»¹Ğè¼ÌĞø²éÕÒ
+			nowMap = (Map) nowMap.get(word);     //è·å–æŒ‡å®škey
+			if(nowMap != null){     //å­˜åœ¨ï¼Œåˆ™åˆ¤æ–­æ˜¯å¦ä¸ºæœ€åä¸€ä¸ª
+				matchFlag++;     //æ‰¾åˆ°ç›¸åº”keyï¼ŒåŒ¹é…æ ‡è¯†+1 
+				if("1".equals(nowMap.get("isEnd"))){       //å¦‚æœä¸ºæœ€åä¸€ä¸ªåŒ¹é…è§„åˆ™,ç»“æŸå¾ªç¯ï¼Œè¿”å›åŒ¹é…æ ‡è¯†æ•°
+					flag = true;       //ç»“æŸæ ‡å¿—ä½ä¸ºtrue   
+					if(SensitivewordFilter.minMatchTYpe == matchType){    //æœ€å°è§„åˆ™ï¼Œç›´æ¥è¿”å›,æœ€å¤§è§„åˆ™è¿˜éœ€ç»§ç»­æŸ¥æ‰¾
 						break;
 					}
 				}
 			}
-			else{     //²»´æÔÚ£¬Ö±½Ó·µ»Ø
+			else{     //ä¸å­˜åœ¨ï¼Œç›´æ¥è¿”å›
 				break;
 			}
 		}
-		if(matchFlag < 2 || !flag){        //³¤¶È±ØĞë´óÓÚµÈÓÚ1£¬Îª´Ê 
+		if(matchFlag < 2 || !flag){        //é•¿åº¦å¿…é¡»å¤§äºç­‰äº1ï¼Œä¸ºè¯ 
 			matchFlag = 0;
 		}
 		return matchFlag;
@@ -150,15 +150,15 @@ public class SensitivewordFilter {
 	
 	public static void main(String[] args) {
 		SensitivewordFilter filter = new SensitivewordFilter();
-		System.out.println("Ãô¸Ğ´ÊµÄÊıÁ¿£º" + filter.sensitiveWordMap.size());
-		String string = "Ì«¶àµÄÉË¸ĞÇé»³Ò²ĞíÖ»¾ÖÏŞÓÚËÇÑø»ùµØ Ó«Ä»ÖĞµÄÇé½Ú£¬Ö÷ÈË¹«³¢ÊÔ×ÅÈ¥ÓÃÄ³ÖÖ·½Ê½½¥½¥µÄºÜäìÈ÷µØÊÍ×ÔÉ±Ö¸ÄÏ»³ÄÇĞ©×Ô¼º¾­ÀúµÄÉË¸Ğ¡£"
-						+ "È»ºó·¨ÂÖ¹¦ ÎÒÃÇµÄ°çÑİµÄ½ÇÉ«¾ÍÊÇ¸úËæ×ÅÖ÷ÈË¹«µÄÏ²ºì¿ÍÁªÃË Å­°§ÀÖ¶ø¹ıÓÚÇ£Ç¿µÄ°Ñ×Ô¼ºµÄÇé¸ĞÒ²¸½¼ÓÓÚÒøÄ»Çé½ÚÖĞ£¬È»ºó¸Ğ¶¯¾ÍÁ÷Àá£¬"
-						+ "ÄÑ¹ı¾ÍÌÉÔÚÄ³Ò»¸öÈËµÄ»³Àï¾¡ÇéµÄ²ûÊöĞÄìé»òÕßÊÖ»ú¿¨¸´ÖÆÆ÷Ò»¸öÈËÒ»±­ºì¾ÆÒ»²¿µçÓ°ÔÚÒ¹Èı¼¶Æ¬ ÉîÈË¾²µÄÍíÉÏ£¬¹ØÉÏµç»°¾²¾²µÄ·¢´ô×Å¡£";
-		System.out.println("´ı¼ì²âÓï¾ä×ÖÊı£º" + string.length());
+		System.out.println("æ•æ„Ÿè¯çš„æ•°é‡ï¼š" + filter.sensitiveWordMap.size());
+		String string = "å¤ªå¤šçš„ä¼¤æ„Ÿæƒ…æ€€ä¹Ÿè®¸åªå±€é™äºé¥²å…»åŸºåœ° è§å¹•ä¸­çš„æƒ…èŠ‚ï¼Œä¸»äººå…¬å°è¯•ç€å»ç”¨æŸç§æ–¹å¼æ¸æ¸çš„å¾ˆæ½‡æ´’åœ°é‡Šè‡ªæ€æŒ‡å—æ€€é‚£äº›è‡ªå·±ç»å†çš„ä¼¤æ„Ÿã€‚"
+						+ "ç„¶åæ³•è½®åŠŸ æˆ‘ä»¬çš„æ‰®æ¼”çš„è§’è‰²å°±æ˜¯è·Ÿéšç€ä¸»äººå…¬çš„å–œçº¢å®¢è”ç›Ÿ æ€’å“€ä¹è€Œè¿‡äºç‰µå¼ºçš„æŠŠè‡ªå·±çš„æƒ…æ„Ÿä¹Ÿé™„åŠ äºé“¶å¹•æƒ…èŠ‚ä¸­ï¼Œç„¶åæ„ŸåŠ¨å°±æµæ³ªï¼Œ"
+						+ "éš¾è¿‡å°±èººåœ¨æŸä¸€ä¸ªäººçš„æ€€é‡Œå°½æƒ…çš„é˜è¿°å¿ƒæ‰‰æˆ–è€…æ‰‹æœºå¡å¤åˆ¶å™¨ä¸€ä¸ªäººä¸€æ¯çº¢é…’ä¸€éƒ¨ç”µå½±åœ¨å¤œä¸‰çº§ç‰‡ æ·±äººé™çš„æ™šä¸Šï¼Œå…³ä¸Šç”µè¯é™é™çš„å‘å‘†ç€ã€‚";
+		System.out.println("å¾…æ£€æµ‹è¯­å¥å­—æ•°ï¼š" + string.length());
 		long beginTime = System.currentTimeMillis();
 		Set<String> set = filter.getSensitiveWord(string, 1);
 		long endTime = System.currentTimeMillis();
-		System.out.println("Óï¾äÖĞ°üº¬Ãô¸Ğ´ÊµÄ¸öÊıÎª£º" + set.size() + "¡£°üº¬£º" + set);
-		System.out.println("×Ü¹²ÏûºÄÊ±¼äÎª£º" + (endTime - beginTime));
+		System.out.println("è¯­å¥ä¸­åŒ…å«æ•æ„Ÿè¯çš„ä¸ªæ•°ä¸ºï¼š" + set.size() + "ã€‚åŒ…å«ï¼š" + set);
+		System.out.println("æ€»å…±æ¶ˆè€—æ—¶é—´ä¸ºï¼š" + (endTime - beginTime));
 	}
 }
