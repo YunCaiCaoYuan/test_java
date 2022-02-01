@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/KMP" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hello" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/designPattern/single/Singleton2" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/designPattern/singleton/Singleton5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/designPattern/singleton/Singleton6" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/concurrent" />
       <excludeFolder url="file://$MODULE_DIR$/designPattern/singleton" />
       <excludeFolder url="file://$MODULE_DIR$/designPattern/singleton/Singleton3" />
