@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/designPattern/builder/builder1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/designPattern/abstractFactory/abstractFactory1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/designPattern/prototype/prototype2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/designPattern/adapter/adapter1" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
