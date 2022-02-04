@@ -9,9 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/designPattern/single/Singleton2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/designPattern/singleton/Singleton6" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/designPattern/builder/builder1" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/designPattern/abstractFactory/abstractFactory1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/designPattern/flyweight/Flyweight2" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/designPattern/proxy/Proxy2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/designPattern/visitor/Visitor2" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
