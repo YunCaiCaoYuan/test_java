@@ -1,3 +1,6 @@
+// 模版方法
+// 形式：声明抽象类，抽象类声明方法，继承类实现这些方法
+
 abstract class AbstractClassTemplate {
     void step1(String key){
         //dosomthing
